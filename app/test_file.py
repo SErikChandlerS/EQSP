@@ -27,7 +27,7 @@ def test_contact_create():
     assert contact.description == "dfsdfsdfsdf"
 
 
-def test_url():            
+def test_url():
     path = reverse('contact_list')
 
     assert resolve(path).view_name == "contact_list"
