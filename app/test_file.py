@@ -1,6 +1,6 @@
-import pytest    
-from app.models import Contact  
-from app.views import contact_list_view 
+import pytest
+from app.models import Contact
+from app.views import contact_list_view
 from django.urls import reverse, resolve
 from django.test import RequestFactory
 
@@ -14,10 +14,12 @@ def test_view():
     assert response.status_code == 200
 
 
-@pytest.mark.django_db    
+@pytest.mark.django_db
 def test_contact_create():
     contact = Contact.objects.create(
-        full_name="Erik Chandler", phone_number="79920241320", description="dfsdfsdfsdf"
+        full_name="Erik Chandler",
+        phone_number="79920241320",
+        description="dfsdfsdfsdf",
     )
 
     assert contact.full_name == "Erik Chandler"
