@@ -20,10 +20,12 @@ def test_contact_create():
 
     assert contact.full_name == "Erik Chandler"
     assert contact.phone_number == "79920241320"
+    assert contact.phone_number == "dfsdfsdfsdf"
 
 
 def test_url():            
     path = reverse('contact_list')
-    print(path)
 
     assert resolve(path).view_name == "contact_list"
+
+
