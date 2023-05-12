@@ -22,9 +22,19 @@ def test_contact_create():
         description="dfsdfsdfsdf",
     )
 
+    contact2 = Contact.objects.create(
+        full_name="Erik Chandler",
+        phone_number="79920241320",
+        description="dfsdfsdfsdf",
+    )
+
     assert contact.full_name == "Erik Chandler"
     assert contact.phone_number == "79920241320"
     assert contact.description == "dfsdfsdfsdf"
+
+    assert contact2.full_name == "Erik Chandler"
+    assert contact2.phone_number == "79920241320"
+    assert contact2.description == "dfsdfsdfsdf"
 
 
 def test_url():
