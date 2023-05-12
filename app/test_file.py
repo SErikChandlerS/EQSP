@@ -24,6 +24,13 @@ def test_contact_create():
 
 def test_url():            
     path = reverse('contact_list')
-    print(path)
 
     assert resolve(path).view_name == "contact_list"
+
+
+@pytest.mark.django_db
+def test_contact_create_more():
+    contact = Contact.objects.create(full_name="Monica Galuccio", phone_number="42123512323", description="dfsdfsdfsdf")
+
+    assert contact.full_name == "Monica Galuccio"
+    assert contact.phone_number == "42123512323"
